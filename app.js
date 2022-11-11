@@ -17,7 +17,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 
 
 
-myApp.controller('myCtrl', ["$scope", function($scope) {
+myApp.controller('myCtrl', ["$scope", "$http", function($scope, $http) {
     $scope.text = 'Big Clubs in Premier League'
 
     $scope.removeClub = (club) => {
@@ -38,33 +38,9 @@ myApp.controller('myCtrl', ["$scope", function($scope) {
         $scope.newClub.rank = ''
     }
 
-    $scope.clubs = [
-        {
-            name: 'Man Utd',
-            rank: 5,
-            ucl: false
-        },
-        {
-            name: 'Arsenal',
-            rank: 1,
-            ucl: false
-        },
-        {
-            name: 'Man City',
-            rank: 2,
-            ucl: true
-        },
-        {
-            name: 'Chelsea',
-            rank: 3,
-            ucl: true
-        },
-        {
-            name: 'Liverpool',
-            rank: 8,
-            ucl: true
-        }
-    ]
+    $http.get('data/clubData.json').then((response) => {
+        $scope.clubs = response.data
+    })
 }])
 
 

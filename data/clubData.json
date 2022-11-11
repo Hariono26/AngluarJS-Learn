@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Man Utd",
+        "rank": 5,
+        "ucl": false
+    },
+    {
+        "name": "Arsenal",
+        "rank": 1,
+        "ucl": false
+    },
+    {
+        "name": "Man City",
+        "rank": 2,
+        "ucl": true
+    },
+    {
+        "name": "Chelsea",
+        "rank": 3,
+        "ucl": true
+    },
+    {
+        "name": "Liverpool",
+        "rank": 8,
+        "ucl": true
+    }
+]
