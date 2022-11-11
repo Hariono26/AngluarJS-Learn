@@ -1,4 +1,21 @@
-var myApp = angular.module('myApp', [])
+var myApp = angular.module('myApp', ['ngRoute'])
+
+myApp.config(['$routeProvider', function($routeProvider) {
+
+    $routeProvider
+        .when('/', {
+            templateUrl: 'views/home.html'
+        })
+        .when('/clublist', {
+            templateUrl: 'views/clubList.html',
+            controller: 'myCtrl'
+        })
+        .otherwise({
+            redirectTo: '/'
+        })
+}])
+
+
 
 myApp.controller('myCtrl', ["$scope", function($scope) {
     $scope.text = 'Big Clubs in Premier League'
